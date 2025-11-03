@@ -1,7 +1,9 @@
-# 🪵 BoisNord Inc. - Site Web Complet
+# 🪵 Bois de Chauffage Barbe - Site Web Complet
 
-**Site web professionnel et prêt à déployer pour BoisNord Inc.**  
-Entreprise québécoise de vente de bois de chauffage basée à Québec.
+**Site web professionnel et prêt à déployer pour Bois de Chauffage Barbe**  
+Commerce de détail de bois et matériaux de construction au Québec.
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR-BADGE-ID/deploy-status)](https://app.netlify.com/sites/chauffagebois/deploys)
 
 ---
 
