@@ -59,7 +59,7 @@ export default function LivraisonPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-primary-800 mb-2">Commandez</h3>
                 <p className="text-gray-600">
-                  Par téléphone, courriel ou formulaire en ligne
+                  Formulaire en ligne, courriel ou téléphone
                 </p>
               </div>
 
