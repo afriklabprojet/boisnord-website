@@ -130,8 +130,8 @@ export default function ContactPageClient() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-              {/* Contact Info */}
-              <div className="lg:col-span-1">
+              {/* Contact Info - Appears second on mobile, first on desktop */}
+              <div className="lg:col-span-1 order-2 lg:order-1">
                 <h2 className="text-2xl font-display font-bold text-primary-800 mb-6">
                   Nos Coordonnées
                 </h2>
@@ -222,8 +222,8 @@ export default function ContactPageClient() {
                 </div>
               </div>
 
-              {/* Contact Form */}
-              <div className="lg:col-span-2">
+              {/* Contact Form - Appears first on mobile, second on desktop */}
+              <div className="lg:col-span-2 order-1 lg:order-2">
                 <div className="card">
                   <h2 className="text-2xl font-display font-bold text-primary-800 mb-6">
                     Formulaire de Commande / Contact
