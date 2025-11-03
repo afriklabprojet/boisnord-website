@@ -300,9 +300,6 @@ export default function HomePage() {
               <FaPhone className="inline mr-2" />
               Commandez en Ligne
             </Link>
-            <Link href="/contact" className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-lg">
-              Formulaire en Ligne
-            </Link>
           </div>
         </div>
       </section>
