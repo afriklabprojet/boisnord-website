@@ -247,25 +247,18 @@ Les erreurs TypeScript pendant le développement sont normales jusqu'à l'instal
 
 ---
 
+## � Documentation
+
+- **[DOCS.md](./DOCS.md)** - Documentation technique complète (déploiement, scripts, configuration)
+- **[TROUBLESHOOTING.md](./TROUBLESHOOTING.md)** - Guide de dépannage rapide
+
 ## 📝 Licence
 
-Tous droits réservés © 2025 BoisNord Inc.
-
----
-
-## 🎁 Bonus - Prochaines Étapes Recommandées
-
-1. **Google Analytics** - Suivre vos visiteurs
-2. **Google Search Console** - Optimiser SEO
-3. **Pixel Facebook** - Remarketing
-4. **Google My Business** - Visibilité locale
-5. **Avis clients** - Intégrer Trustpilot ou Google Reviews
-6. **Blog** - Ajouter une section articles/conseils
-7. **Images professionnelles** - Remplacer les emojis par vraies photos
+Tous droits réservés © 2025 Bois de Chauffage Barbe
 
 ---
 
 **🚀 Votre site est prêt à décoller!**
 
-*Développé avec ❤️ pour BoisNord Inc.*
+*Développé avec ❤️ pour Bois de Chauffage Barbe.*
 # boisdechauffagesbarbe
