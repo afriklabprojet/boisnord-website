@@ -129,10 +129,10 @@ export default function HomePage() {
               <Link href="/produits" className="btn-primary-orange w-full sm:w-auto">
                 Commandez dès maintenant
               </Link>
-              <a href="tel:+14505290479" className="btn-outline-white w-full sm:w-auto">
-                <FaPhone className="inline mr-2" />
-                Appelez-nous
-              </a>
+              <Link href="/produits" className="btn-outline-white w-full sm:w-auto">
+                <FaLeaf className="inline mr-2" />
+                Découvrir nos produits
+              </Link>
             </div>
 
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
