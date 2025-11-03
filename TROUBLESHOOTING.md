@@ -10,18 +10,28 @@ ChunkLoadError: Loading chunk app/layout failed.
 
 ### ✅ Solutions disponibles
 
-#### 1. Redémarrage rapide
+#### 1. Démarrage sécurisé (RECOMMANDÉ)
+```bash
+npm run dev-safe
+```
+
+#### 2. Démarrage avec nettoyage
+```bash
+npm run dev-clean
+```
+
+#### 3. Redémarrage rapide
 ```bash
 npm run fresh-start
 ```
 
-#### 2. Nettoyage manuel
+#### 4. Nettoyage manuel
 ```bash
 ./clean.sh
 npm run dev
 ```
 
-#### 3. Réinstallation complète (si problème persiste)
+#### 5. Réinstallation complète (si problème persiste)
 ```bash
 npm run reset
 ```
@@ -37,7 +47,9 @@ npm run dev
 
 ## 🚀 Scripts disponibles
 
-- `npm run dev` - Démarrer en développement
+- `npm run dev` - Démarrer en développement (basique)
+- `npm run dev-safe` - Démarrage sécurisé (RECOMMANDÉ)
+- `npm run dev-clean` - Démarrage avec nettoyage automatique
 - `npm run build` - Construire pour production
 - `npm run clean` - Nettoyer les caches
 - `npm run fresh-start` - Nettoyage + redémarrage

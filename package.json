@@ -5,6 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev-safe": "./start-dev.sh",
+    "dev-clean": "./start-dev.sh --clean",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
