@@ -54,7 +54,7 @@ export default function HomePage() {
     {
       icon: <FaCalendarAlt className="text-4xl" />,
       title: '2. Planifier',
-      description: 'Confirmez votre commande et planifiez la livraison selon vos disponibilités via formulaire.',
+      description: 'Nous vous contactons pour confirmer la commande et planifier la livraison selon vos disponibilités.',
     },
     {
       icon: <FaTruck className="text-4xl" />,

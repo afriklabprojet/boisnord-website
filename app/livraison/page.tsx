@@ -69,7 +69,7 @@ export default function LivraisonPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-primary-800 mb-2">Planifiez</h3>
                 <p className="text-gray-600">
-                  Nous vous appelons pour confirmer la date et l'heure
+                  Nous vous contactons pour confirmer la commande
                 </p>
               </div>
 
