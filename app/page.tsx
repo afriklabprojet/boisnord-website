@@ -298,7 +298,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/produits" className="bg-white text-forest-700 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-lg">
               <FaPhone className="inline mr-2" />
-              Commandez en Ligne
+              Commandez maintenant
             </Link>
           </div>
         </div>

@@ -82,7 +82,7 @@ export default function Footer() {
               <li>✓ Bois séché AAA</li>
               <li>✓ Bois fendu prêt à brûler</li>
               <li>✓ Conseils gratuits</li>
-              <li>✓ Commande en ligne</li>
+              <li>✓ Commande maintenant</li>
             </ul>
           </div>
 
