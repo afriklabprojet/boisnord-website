@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { FaFire, FaCheckCircle, FaTruck, FaLeaf, FaShieldAlt, FaStar, FaPhone, FaClipboardList, FaCalendarAlt } from 'react-icons/fa'
+import { FaFire, FaCheckCircle, FaTruck, FaLeaf, FaShieldAlt, FaStar, FaPhone, FaClipboardList, FaCalendarAlt, FaUniversity } from 'react-icons/fa'
 
 export default function HomePage() {
   const products = [
@@ -28,19 +28,19 @@ export default function HomePage() {
       popular: false,
     },
     {
-      name: 'Granulés Premium',
-      description: 'Granulés de bois 100% naturels. Combustion propre et efficace pour poêles à granulés.',
-      price: '6.50$',
-      unit: 'le sac (15kg)',
-      icon: '🌾',
-      popular: false,
-    },
-    {
       name: 'Frêne Blanc',
       description: 'Chaleur immédiate et constante. Idéal pour démarrer vos feux rapidement.',
       price: '115$',
       unit: 'la corde',
       icon: '🪵',
+      popular: false,
+    },
+    {
+      name: 'Granulés Premium',
+      description: 'Granulés de bois 100% naturels. Combustion propre et efficace pour poêles à granulés.',
+      price: '250$',
+      unit: 'le sac (15kg)',
+      icon: '🌾',
       popular: false,
     },
   ]
@@ -127,11 +127,11 @@ export default function HomePage() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href="/produits" className="btn-primary-orange w-full sm:w-auto">
-                Découvrir nos produits
+                Commandez dès maintenant
               </Link>
               <a href="tel:+14505290479" className="btn-outline-white w-full sm:w-auto">
                 <FaPhone className="inline mr-2" />
-                Commandez dès maintenant
+                Appelez-nous
               </a>
             </div>
 
@@ -187,7 +187,6 @@ export default function HomePage() {
                 
                 <div className="text-center mb-4">
                   <span className="text-3xl font-bold text-forest-700">{product.price}</span>
-                  <span className="text-gray-600 ml-2">/ {product.unit}</span>
                 </div>
 
                 <ul className="space-y-2 mb-6 text-sm">
@@ -206,7 +205,7 @@ export default function HomePage() {
                 </ul>
 
                 <Link
-                  href="/contact"
+                  href="/produits"
                   className={product.popular ? 'btn-primary w-full text-center block' : 'btn-outline w-full text-center block'}
                 >
                   Commander
@@ -297,10 +296,10 @@ export default function HomePage() {
             Contactez-nous par téléphone ou en ligne. Livraison rapide garantie dans toute la région !
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+14505290479" className="bg-white text-forest-700 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-lg">
+            <Link href="/produits" className="bg-white text-forest-700 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-lg">
               <FaPhone className="inline mr-2" />
-              Commande Express
-            </a>
+              Commandez en Ligne
+            </Link>
             <Link href="/contact" className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-lg">
               Formulaire en Ligne
             </Link>

@@ -12,7 +12,6 @@ export default function ProduitsPage() {
     {
       name: 'Érable Dur (Sugar Maple)',
       price: '150$',
-      priceHalf: '80$',
       description: 'Le roi incontesté du bois de chauffage! L\'érable dur offre le meilleur pouvoir calorifique et produit des braises durables.',
       icon: '🍁',
       features: [
@@ -27,7 +26,6 @@ export default function ProduitsPage() {
     {
       name: 'Mélange Premium',
       price: '125$',
-      priceHalf: '65$',
       description: 'Mélange soigneusement sélectionné de bois francs pour une combustion optimale et économique.',
       icon: '🔥',
       features: [
@@ -41,8 +39,7 @@ export default function ProduitsPage() {
     },
     {
       name: 'Granulés Premium',
-      price: '6.50$',
-      priceHalf: '3.50$',
+      price: '250$',
       description: 'Granulés de bois 100% naturels de première qualité. Combustion propre et efficace pour poêles à granulés.',
       icon: '🌾',
       features: [
@@ -57,7 +54,6 @@ export default function ProduitsPage() {
     {
       name: 'Bouleau Jaune',
       price: '120$',
-      priceHalf: '65$',
       description: 'Excellent équilibre entre chaleur intense et durée de combustion. Populaire et économique.',
       icon: '🌳',
       features: [
@@ -72,7 +68,6 @@ export default function ProduitsPage() {
     {
       name: 'Frêne Blanc',
       price: '115$',
-      priceHalf: '60$',
       description: 'Excellente chaleur, peut même brûler légèrement vert. Parfait pour usage d\'urgence ou immédiat.',
       icon: '🪵',
       features: [
@@ -85,24 +80,8 @@ export default function ProduitsPage() {
       popular: false,
     },
     {
-      name: 'Mélange Premium',
-      price: '295$',
-      priceHalf: '160$',
-      description: 'Notre mix signature: 50% érable, 30% bouleau, 20% frêne. Le meilleur des trois mondes!',
-      icon: '⭐',
-      features: [
-        'Variété optimale pour tous usages',
-        'Équilibre chaleur et durée',
-        'Excellent rapport qualité-prix',
-        'Combustion polyvalente',
-        'Notre recommandation #1',
-      ],
-      popular: true,
-    },
-    {
       name: 'Bois d\'Allumage',
       price: '45$',
-      priceHalf: null,
       description: 'Petits morceaux de bois franc parfaits pour démarrer votre feu rapidement. Sac de 40 lbs.',
       icon: '🔥',
       features: [
@@ -116,8 +95,7 @@ export default function ProduitsPage() {
     },
     {
       name: 'Copeaux/Rabotures',
-      price: '25$',
-      priceHalf: null,
+      price: '35$',
       description: 'Idéal pour allumer vos feux. Sac de 30 lbs de copeaux secs.',
       icon: '✨',
       features: [
@@ -171,16 +149,8 @@ export default function ProduitsPage() {
                   {product.description}
                 </p>
 
-                <div className="text-center mb-4 py-4 bg-forest-50 rounded-lg">
-                  <div className="mb-2">
-                    <span className="text-3xl font-bold text-forest-700">{product.price}</span>
-                    <span className="text-gray-600 ml-2">/ corde</span>
-                  </div>
-                  {product.priceHalf && (
-                    <div className="text-sm text-gray-600">
-                      <span className="font-semibold">{product.priceHalf}</span> / demi-corde
-                    </div>
-                  )}
+                                <div className="text-center mb-6">
+                  <span className="text-3xl font-bold text-forest-700">{product.price}</span>
                 </div>
 
                 <ul className="space-y-2 mb-6">

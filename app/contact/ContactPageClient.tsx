@@ -17,23 +17,67 @@ export default function ContactPageClient() {
 
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setLoading(true)
+    setError('')
     
     try {
-      // Encoder les données pour Netlify Forms
-      const formElement = e.target as HTMLFormElement
-      const formDataEncoded = new FormData(formElement)
-      
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formDataEncoded as any).toString(),
-      })
+      // Validation côté client
+      if (!formData.name || !formData.email || !formData.phone) {
+        setError('Veuillez remplir tous les champs obligatoires.')
+        setLoading(false)
+        return
+      }
 
-      if (response.ok) {
+      // Validation email
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      if (!emailRegex.test(formData.email)) {
+        setError('Veuillez entrer une adresse email valide.')
+        setLoading(false)
+        return
+      }
+
+      let success = false
+
+      // Essayer d'abord Netlify Forms
+      try {
+        const formElement = e.target as HTMLFormElement
+        const formDataEncoded = new FormData(formElement)
+        
+        const netlifyResponse = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formDataEncoded as any).toString(),
+        })
+
+        if (netlifyResponse.ok) {
+          success = true
+        }
+      } catch (netlifyError) {
+        console.log('Netlify Forms non disponible, tentative API locale...')
+      }
+
+      // Si Netlify échoue, utiliser notre API
+      if (!success) {
+        const apiFormData = new FormData()
+        Object.entries(formData).forEach(([key, value]) => {
+          apiFormData.append(key, value)
+        })
+
+        const apiResponse = await fetch('/api/contact', {
+          method: 'POST',
+          body: apiFormData,
+        })
+
+        if (apiResponse.ok) {
+          success = true
+        }
+      }
+
+      if (success) {
         setSubmitted(true)
         
         // Réinitialiser après 5 secondes
@@ -50,11 +94,11 @@ export default function ContactPageClient() {
           })
         }, 5000)
       } else {
-        alert('Erreur lors de l\'envoi. Veuillez réessayer.')
+        throw new Error('Aucun service de formulaire disponible')
       }
     } catch (error) {
       console.error('Error:', error)
-      alert('Erreur lors de l\'envoi. Veuillez réessayer.')
+      setError('Erreur lors de l\'envoi. Veuillez réessayer ou nous appeler directement au (450) 529-0479.')
     } finally {
       setLoading(false)
     }
@@ -187,8 +231,15 @@ export default function ContactPageClient() {
 
                   {submitted && (
                     <div className="bg-forest-100 border-l-4 border-forest-600 text-forest-800 p-4 mb-6 rounded">
-                      <p className="font-semibold">Merci pour votre message!</p>
-                      <p className="text-sm">Nous vous contacterons dans les plus brefs délais.</p>
+                      <p className="font-semibold">✅ Merci pour votre message!</p>
+                      <p className="text-sm">Nous vous contacterons dans les plus brefs délais (sous 24h).</p>
+                    </div>
+                  )}
+
+                  {error && (
+                    <div className="bg-red-100 border-l-4 border-red-600 text-red-800 p-4 mb-6 rounded">
+                      <p className="font-semibold">❌ Erreur</p>
+                      <p className="text-sm">{error}</p>
                     </div>
                   )}
 

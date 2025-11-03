@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { FaHeart, FaLeaf, FaUsers, FaAward, FaHandshake, FaTree } from 'react-icons/fa'
+import { FaHeart, FaLeaf, FaUsers, FaAward, FaHandshake, FaTree, FaUniversity, FaShieldAlt } from 'react-icons/fa'
 
 export const metadata: Metadata = {
   title: 'À Propos - BOIS DE CHAUFFAGE BARBE | Commerce de Bois et Matériaux',
@@ -249,6 +249,48 @@ export default function AProposPage() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Payment Methods Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-orange-50 to-amber-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="section-title">Modes de Paiement</h2>
+            <p className="section-subtitle mx-auto">
+              Plusieurs options de paiement pour votre commodité
+            </p>
+          </div>
+
+          <div className="flex justify-center">
+            {/* Virement Interac */}
+            <div className="card text-center hover:shadow-xl transition-all duration-300 border-l-4 border-orange-500 max-w-md">
+              <div className="mb-6">
+                <div className="bg-orange-100 rounded-full p-4 w-20 h-20 mx-auto flex items-center justify-center">
+                  <FaUniversity className="text-3xl text-orange-600" />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">Virement Interac</h3>
+              <p className="text-gray-600 mb-4">
+                Paiement sécurisé par virement électronique
+              </p>
+              <div className="bg-orange-50 rounded-lg p-3">
+                <span className="text-orange-700 font-medium">Recommandé</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <div className="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
+              <h3 className="text-lg font-semibold text-gray-800 mb-3">
+                <FaShieldAlt className="inline text-green-600 mr-2" />
+                Paiement Sécurisé Garanti
+              </h3>
+              <p className="text-gray-600">
+                Toutes nos transactions sont sécurisées. Nous acceptons les paiements avant ou à la livraison selon votre préférence.
+              </p>
             </div>
           </div>
         </div>
