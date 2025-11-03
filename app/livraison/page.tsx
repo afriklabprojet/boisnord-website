@@ -278,13 +278,10 @@ export default function LivraisonPage() {
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
             Commandez maintenant et profitez d'une livraison rapide dans votre secteur!
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Link href="/contact" className="bg-white text-forest-700 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
               Commandez maintenant
             </Link>
-            <a href="tel:+14505290479" className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-              (450) 529-0479
-            </a>
           </div>
         </div>
       </section>
