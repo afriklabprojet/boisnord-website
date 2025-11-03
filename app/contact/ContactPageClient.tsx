@@ -284,7 +284,7 @@ export default function ContactPageClient() {
                           value={formData.phone}
                           onChange={handleChange}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-forest-500 focus:border-forest-500 transition-colors"
-                          placeholder="(418) 555-1234"
+                          placeholder="(450) 529-0479"
                         />
                       </div>
                     </div>

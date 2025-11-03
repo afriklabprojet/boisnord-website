@@ -116,7 +116,7 @@ colors: {
 
 - **Textes**: Éditez les fichiers dans `app/`
 - **Produits**: Voir `app/produits/page.tsx`
-- **Coordonnées**: Chercher `(418) 555-1234` et remplacer
+- **Coordonnées**: Chercher `(450) 529-0479` et remplacer
 
 ### Ajouter des Images
 
@@ -241,7 +241,7 @@ Les erreurs TypeScript pendant le développement sont normales jusqu'à l'instal
 
 ## 📞 Support & Questions
 
-- **Téléphone**: (418) 555-1234 *(à remplacer)*
+- **Téléphone**: (450) 529-0479
 - **Email**: info@boisnord.ca *(à remplacer)*
 - **Adresse**: 1234 Route de la Forêt, Québec *(à remplacer)*
 
