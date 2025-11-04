@@ -1,21 +1,7 @@
 import type { Metadata } from 'next'
-import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
-
-const poppins = Poppins({ 
-  weight: ['400', '600', '700'],
-  subsets: ['latin'],
-  variable: '--font-poppins',
-  display: 'swap',
-})
 
 export const metadata: Metadata = {
   title: 'BOIS DE CHAUFFAGE BARBE | Commerce de Bois et Matériaux - Québec',
@@ -47,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr-CA" className={`${inter.variable} ${poppins.variable}`}>
+    <html lang="fr-CA">
       <body className="font-sans antialiased bg-white">
         <Header />
         <main className="min-h-screen">

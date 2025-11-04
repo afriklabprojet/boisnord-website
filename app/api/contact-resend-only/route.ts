@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
 export async function POST(request: NextRequest) {
+  console.log('🚨🚨🚨 API CONTACT-RESEND-ONLY APPELÉE 🚨🚨🚨')
+  console.log('Timestamp:', new Date().toISOString())
+  
   try {
     const formData = await request.formData()
     
@@ -24,6 +27,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Utiliser le domaine vérifié pour l'envoi
     const destinationEmail = process.env.CONTACT_EMAIL || 'infos@boisdechauffagesbarbe.shop'
 
     console.log('=== TEST RESEND UNIQUEMENT ===')
@@ -42,9 +46,9 @@ export async function POST(request: NextRequest) {
         console.log('🔄 Tentative envoi Resend...')
         
         const result = await resend.emails.send({
-          from: 'onboarding@resend.dev',
+          from: 'noreply@boisdechauffagesbarbe.shop', // Utiliser votre domaine vérifié
           to: [destinationEmail],
-          subject: `[Site Web] Nouvelle demande - ${data.name}`,
+          subject: `[Bois Barbe] Nouvelle demande - ${data.name}`,
           html: `
             <h2>Nouvelle demande de contact - Bois de Chauffage Barbe</h2>
             

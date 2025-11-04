@@ -40,25 +40,69 @@ export default function ContactPageClient() {
         return
       }
 
-      let success = false
+      // RESEND UNIQUEMENT - Désactiver Netlify Forms  
+      let success = false // Force l'échec de Netlify pour utiliser Resend
 
-      // Essayer d'abord Netlify Forms
+      // Netlify Forms désactivé - utilisation de Resend uniquement
+      /*
+      console.log('📧 Tentative d\'envoi...')
+
+      // Test avec API simple d'abord
       try {
-        const formElement = e.target as HTMLFormElement
-        const formDataEncoded = new FormData(formElement)
-        
-        const netlifyResponse = await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formDataEncoded as any).toString(),
+        const apiFormData = new FormData()
+        Object.entries(formData).forEach(([key, value]) => {
+          apiFormData.append(key, value)
         })
 
-        if (netlifyResponse.ok) {
-          success = true
+        console.log('🧪 Test API simple...')
+        const testResponse = await fetch('/api/test-simple', {
+          method: 'POST',
+          body: apiFormData,
+        })
+        
+        const testResult = await testResponse.json()
+        console.log('🔍 Résultat API test:', testResult)
+        
+        if (testResult.success) {
+          console.log('✅ API test réussie! Variables env:', testResult)
+          
+          // Maintenant essayer Resend
+          const resendResponse = await fetch('/api/contact-resend-only', {
+            method: 'POST',
+            body: apiFormData,
+          })
+          
+          const resendResult = await resendResponse.json()
+          console.log('🔍 Résultat Resend:', resendResult)
+          
+          if (resendResult.success) {
+            console.log('✅ Email envoyé avec succès via Resend!')
+          } else {
+            console.log('❌ Échec Resend mais API fonctionne:', resendResult.error)
+          }
+        } else {
+          console.log('❌ API test échouée:', testResult.error)
         }
-      } catch (netlifyError) {
-        console.log('Netlify Forms non disponible, tentative API locale...')
+      } catch (error) {
+        console.error('❌ Erreur complète:', error)
       }
+
+      // Toujours marquer comme succès pour le test
+      setSubmitted(true)
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        product: '',
+        quantity: '',
+        address: '',
+        message: '',
+      })
+      
+      setTimeout(() => {
+        setSubmitted(false)
+      }, 5000)
+      */
 
       // Si Netlify échoue, utiliser notre API
       if (!success) {
@@ -67,7 +111,7 @@ export default function ContactPageClient() {
           apiFormData.append(key, value)
         })
 
-        // Test DIRECT Resend en premier
+        // RESEND UNIQUEMENT - Test direct
         try {
           const resendOnlyResponse = await fetch('/api/contact-resend-only', {
             method: 'POST',
@@ -75,40 +119,18 @@ export default function ContactPageClient() {
           })
           
           const resendResult = await resendOnlyResponse.json()
-          console.log('🔍 Résultat test Resend:', resendResult)
+          console.log('🔍 Résultat Resend:', resendResult)
           
           if (resendResult.success) {
             success = true
-            console.log('✅ Succès via Resend direct!')
+            console.log('✅ Succès via Resend!')
           } else {
-            console.log('❌ Échec Resend:', resendResult.errorDetails)
+            console.log('❌ Échec Resend:', resendResult.error)
+            setError(`Erreur d'envoi: ${resendResult.error || 'Service indisponible'}. Veuillez nous appeler au (450) 529-0479.`)
           }
         } catch (resendError) {
-          console.log('Erreur test Resend direct:', resendError)
-        }
-
-        // Fallback vers API principal si Resend échoue
-        if (!success) {
-          const apiResponse = await fetch('/api/contact', {
-            method: 'POST',
-            body: apiFormData,
-          })
-
-          if (apiResponse.ok) {
-            success = true
-            console.log('✅ Succès via API principal')
-          } else {
-            // Dernier fallback vers l'API simple
-            const simpleResponse = await fetch('/api/contact-simple', {
-              method: 'POST', 
-              body: apiFormData,
-            })
-            
-            if (simpleResponse.ok) {
-              success = true
-              console.log('✅ Succès via API simple (logs uniquement)')
-            }
-          }
+          console.log('❌ Erreur Resend:', resendError)
+          setError('Erreur de connexion. Veuillez nous appeler directement au (450) 529-0479.')
         }
       }
 
