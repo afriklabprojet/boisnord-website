@@ -7,3 +7,9 @@
 
 [build.environment]
   NEXT_PRIVATE_TARGET = "server"
+
+# Configuration pour les formulaires Netlify
+[forms]
+  # Notifications email pour les soumissions de formulaire
+  [forms.contact]
+    notification = "infos@boisdechauffagesbarbe.shop"
