@@ -191,9 +191,7 @@ export default function LivraisonPage() {
                   Plusieurs options de paiement pour votre commodité.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Argent comptant (préféré)</li>
                   <li>• Virement Interac</li>
-                  <li>• Chèque (à la livraison)</li>
                 </ul>
               </div>
 
