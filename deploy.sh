@@ -42,7 +42,7 @@ git push origin main
 if [ $? -eq 0 ]; then
     echo ""
     echo "✅ Déploiement déclenché avec succès!"
-    echo "🌐 Site: https://chauffagebois.netlify.app"
+    echo "🌐 Site: https://www.boisdechauffagesbarbe.shop"
     echo "📊 Suivi: https://app.netlify.com/sites/chauffagebois/deploys"
     echo "⏱️  Le déploiement prendra environ 2-3 minutes"
 else

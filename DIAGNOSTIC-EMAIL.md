@@ -6,12 +6,12 @@
 
 ### 1. Accéder aux logs Netlify
 1. Allez sur [netlify.com](https://netlify.com)
-2. Connectez-vous et sélectionnez `chauffagebois.netlify.app`
+2. Connectez-vous et sélectionnez `boisdechauffagesbarbe.shop`
 3. Cliquez sur **Functions** dans le menu
 4. Cliquez sur **Function log** ou **View function logs**
 
 ### 2. Tester le formulaire MAINTENANT
-1. Allez sur https://chauffagebois.netlify.app/contact
+1. Allez sur https://www.boisdechauffagesbarbe.shop/contact
 2. Remplissez et soumettez le formulaire  
 3. Immédiatement après, rafraîchissez les logs Netlify
 
@@ -23,11 +23,11 @@
 ## 🔍 DIAGNOSTIC RAPIDE
 
 ### API de debug:
-https://chauffagebois.netlify.app/api/debug-email
+https://www.boisdechauffagesbarbe.shop/api/debug-email
 
 ### Tests API directs:
-- https://chauffagebois.netlify.app/api/contact (API principale)
-- https://chauffagebois.netlify.app/api/contact-simple (API backup)
+- https://www.boisdechauffagesbarbe.shop/api/contact (API principale)
+- https://www.boisdechauffagesbarbe.shop/api/contact-simple (API backup)
 
 ## 🚨 SI TOUJOURS RIEN:
 

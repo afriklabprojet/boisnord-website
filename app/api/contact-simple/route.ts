@@ -48,7 +48,7 @@ Adresse: ${data.address || 'Non spécifiée'}
 Message: ${data.message || 'Aucun message'}
 
 Reçu le: ${data.timestamp}
-Site: https://chauffagebois.netlify.app
+Site: https://www.boisdechauffagesbarbe.shop
     `
 
     console.log('EMAIL À ENVOYER MANUELLEMENT:')

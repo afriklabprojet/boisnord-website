@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
             
             <hr>
             <p><small>Reçu le: ${data.timestamp}</small></p>
-            <p><small>Site: https://chauffagebois.netlify.app</small></p>
+            <p><small>Site: https://www.boisdechauffagesbarbe.shop</small></p>
           `,
           replyTo: data.email as string,
         })

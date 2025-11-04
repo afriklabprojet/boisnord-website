@@ -40,7 +40,7 @@ git push origin main
 ## 🧪 TEST IMMÉDIAT
 
 1. Attendez 2-3 minutes après le déploiement
-2. Testez le formulaire sur https://chauffagebois.netlify.app/contact
+2. Testez le formulaire sur https://www.boisdechauffagesbarbe.shop/contact
 3. Vous devriez recevoir l'email dans 10-30 secondes!
 
 ## 📧 ADRESSES EMAIL SUPPORTÉES

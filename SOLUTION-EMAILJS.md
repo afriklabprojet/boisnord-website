@@ -41,7 +41,7 @@ Message:
 
 ---
 Reçu le: {{timestamp}}
-Site: https://chauffagebois.netlify.app
+Site: https://www.boisdechauffagesbarbe.shop
 ```
 
 5. **Save Template**

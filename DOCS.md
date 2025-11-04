@@ -14,7 +14,7 @@ Ce projet est configuré pour un déploiement automatique via Netlify. À chaque
 
 **Environment Variables:**
 ```bash
-NEXT_PUBLIC_SITE_URL=https://chauffagebois.netlify.app
+NEXT_PUBLIC_SITE_URL=https://www.boisdechauffagesbarbe.shop
 NEXT_PUBLIC_SITE_NAME=Bois de Chauffage Barbe
 NEXT_PUBLIC_PHONE=(450) 529-0479
 NEXT_PUBLIC_EMAIL=infos@boisdechauffagesbarbe.shop
@@ -85,7 +85,7 @@ public/
 
 ## 🌐 URLs Importantes
 
-- **Site en production:** https://chauffagebois.netlify.app
+- **Site en production:** https://www.boisdechauffagesbarbe.shop
 - **Dashboard Netlify:** https://app.netlify.com/sites/chauffagebois
 - **Dépôt GitHub:** https://github.com/afriklabprojet/boisnord-website
 

@@ -7,7 +7,7 @@ Vous ne recevez pas les emails des formulaires de contact soumis sur le site.
 
 ### Étape 1: Accéder au Dashboard Netlify
 1. Connectez-vous à [netlify.com](https://netlify.com)
-2. Sélectionnez votre site `chauffagebois.netlify.app`
+2. Sélectionnez votre site `boisdechauffagesbarbe.shop`
 
 ### Étape 2: Configurer les Notifications de Formulaire
 1. Dans le dashboard, allez à **Site settings**
@@ -47,7 +47,7 @@ Le fichier `netlify.toml` contient déjà:
 ## Vérifications Supplémentaires
 
 ### 1. Vérifier que le formulaire fonctionne
-- Allez sur https://chauffagebois.netlify.app/contact
+- Allez sur https://www.boisdechauffagesbarbe.shop/contact
 - Remplissez et soumettez le formulaire
 - Un message de confirmation devrait s'afficher
 
