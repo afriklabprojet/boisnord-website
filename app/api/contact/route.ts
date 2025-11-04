@@ -1,4 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { Resend } from 'resend'
+
+// Initialisation de Resend si la clé API est configurée
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
 export async function POST(request: NextRequest) {
   try {
@@ -24,7 +28,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Email de destination
-    const destinationEmail = 'infos@boisdechauffagesbarbe.shop'
+    const destinationEmail = process.env.CONTACT_EMAIL || 'infos@boisdechauffagesbarbe.shop'
 
     // Log pour traçabilité
     console.log(`Nouvelle demande de contact reçue pour ${destinationEmail}:`, {
@@ -36,31 +40,61 @@ export async function POST(request: NextRequest) {
       timestamp: data.timestamp
     })
 
-    // Ici vous pouvez ajouter l'envoi d'email:
-    // - Avec Resend, Nodemailer, ou EmailJS
-    // - Template d'email formaté
-    // - Notification automatique à infos@boisdechauffagesbarbe.shop
-    
-    // Exemple de contenu email qui serait envoyé:
+    // Contenu de l'email
     const emailContent = `
-    Nouvelle demande de contact - Bois de Chauffage Barbe
+    <h2>Nouvelle demande de contact - Bois de Chauffage Barbe</h2>
     
-    Nom: ${data.name}
-    Email: ${data.email}
-    Téléphone: ${data.phone}
-    Produit: ${data.product || 'Non spécifié'}
-    Quantité: ${data.quantity || 'Non spécifiée'}
-    Adresse: ${data.address || 'Non spécifiée'}
-    Message: ${data.message || 'Aucun message'}
+    <h3>Informations du client:</h3>
+    <ul>
+      <li><strong>Nom:</strong> ${data.name}</li>
+      <li><strong>Email:</strong> ${data.email}</li>
+      <li><strong>Téléphone:</strong> ${data.phone}</li>
+      <li><strong>Produit:</strong> ${data.product || 'Non spécifié'}</li>
+      <li><strong>Quantité:</strong> ${data.quantity || 'Non spécifiée'}</li>
+      <li><strong>Adresse:</strong> ${data.address || 'Non spécifiée'}</li>
+    </ul>
     
-    Reçu le: ${data.timestamp}
+    <h3>Message:</h3>
+    <p>${data.message || 'Aucun message spécifique'}</p>
+    
+    <hr>
+    <p><small>Reçu le: ${data.timestamp}</small></p>
+    <p><small>Site: https://chauffagebois.netlify.app</small></p>
     `
-    
-    console.log('Contenu email à envoyer:', emailContent)
+
+    let emailSent = false
+
+    // Tentative d'envoi via Resend
+    if (resend && process.env.RESEND_API_KEY !== 're_123456789_CHANGEZ_MOI') {
+      try {
+        await resend.emails.send({
+          from: 'contact@boisdechauffagesbarbe.shop',
+          to: [destinationEmail],
+          subject: `[Site Web] Nouvelle demande - ${data.name}`,
+          html: emailContent,
+          replyTo: data.email as string,
+        })
+        emailSent = true
+        console.log('Email envoyé via Resend avec succès')
+      } catch (resendError) {
+        console.error('Erreur Resend:', resendError)
+      }
+    }
+
+    // Si Resend échoue, fallback vers notification simple
+    if (!emailSent) {
+      console.log('=== EMAIL NON ENVOYÉ - CONFIGURATION REQUISE ===')
+      console.log('Contenu email qui devrait être envoyé:')
+      console.log(emailContent)
+      console.log('=== FIN DU CONTENU EMAIL ===')
+    }
 
     return NextResponse.json({ 
       success: true, 
-      message: 'Demande reçue avec succès et transmise à infos@boisdechauffagesbarbe.shop' 
+      message: emailSent 
+        ? 'Demande envoyée avec succès!' 
+        : 'Demande reçue et sera traitée manuellement. Configuration email requise.',
+      emailSent
     })
 
   } catch (error) {
