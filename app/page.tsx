@@ -6,7 +6,7 @@ export default function HomePage() {
     {
       name: 'Érable Dur',
       description: 'Le champion du chauffage ! Pouvoir calorifique exceptionnel avec des braises qui durent toute la nuit.',
-      price: '150$',
+      price: '150$/la corde',
       unit: 'la corde',
       icon: '🍁',
       popular: true,
@@ -14,7 +14,7 @@ export default function HomePage() {
     {
       name: 'Mélange Premium',
       description: 'Mélange sélectionné de bois francs pour une combustion optimale et économique.',
-      price: '125$',
+      price: '125$/la corde',
       unit: 'la corde',
       icon: '🔥',
       popular: false,
@@ -22,7 +22,7 @@ export default function HomePage() {
     {
       name: 'Bouleau Jaune',
       description: 'L\'équilibre parfait entre chaleur intense et combustion durable. Facile à allumer.',
-      price: '120$',
+      price: '120$/la corde',
       unit: 'la corde',
       icon: '🌳',
       popular: false,
@@ -30,7 +30,7 @@ export default function HomePage() {
     {
       name: 'Frêne Blanc',
       description: 'Chaleur immédiate et constante. Idéal pour démarrer vos feux rapidement.',
-      price: '115$',
+      price: '115$/la corde',
       unit: 'la corde',
       icon: '🪵',
       popular: false,
@@ -38,8 +38,8 @@ export default function HomePage() {
     {
       name: 'Granulés Premium',
       description: 'Granulés de bois 100% naturels. Combustion propre et efficace pour poêles à granulés.',
-      price: '250$',
-      unit: 'le sac (15kg)',
+      price: '250$/pallet',
+      unit: 'le pallet',
       icon: '🌾',
       popular: false,
     },

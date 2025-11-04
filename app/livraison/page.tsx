@@ -16,15 +16,15 @@ export default function LivraisonPage() {
       color: 'forest',
     },
     {
-      name: 'Zone 2 - 25$',
+      name: 'Zone 2 - 25$/livraison',
       areas: ['Beauport', 'Charlesbourg', 'Boischatel', 'L\'Ange-Gardien', 'Château-Richer', 'Wendake'],
-      fee: '25$',
+      fee: '25$/livraison',
       color: 'primary',
     },
     {
-      name: 'Zone 3 - 50$',
+      name: 'Zone 3 - 50$/livraison',
       areas: ['Stoneham', 'Lac-Beauport', 'Shannon', 'Fossambault', 'Neuville', 'Donnacona'],
-      fee: '50$',
+      fee: '50$/livraison',
       color: 'gray',
     },
   ]

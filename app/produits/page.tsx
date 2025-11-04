@@ -11,7 +11,7 @@ export default function ProduitsPage() {
   const products = [
     {
       name: 'Érable Dur (Sugar Maple)',
-      price: '150$',
+      price: '150$/la corde',
       description: 'Le roi incontesté du bois de chauffage! L\'érable dur offre le meilleur pouvoir calorifique et produit des braises durables.',
       icon: '🍁',
       features: [
@@ -25,7 +25,7 @@ export default function ProduitsPage() {
     },
     {
       name: 'Mélange Premium',
-      price: '125$',
+      price: '125$/la corde',
       description: 'Mélange soigneusement sélectionné de bois francs pour une combustion optimale et économique.',
       icon: '🔥',
       features: [
@@ -39,7 +39,7 @@ export default function ProduitsPage() {
     },
     {
       name: 'Granulés Premium',
-      price: '250$',
+      price: '250$/pallet',
       description: 'Granulés de bois 100% naturels de première qualité. Combustion propre et efficace pour poêles à granulés.',
       icon: '🌾',
       features: [
@@ -53,7 +53,7 @@ export default function ProduitsPage() {
     },
     {
       name: 'Bouleau Jaune',
-      price: '120$',
+      price: '120$/la corde',
       description: 'Excellent équilibre entre chaleur intense et durée de combustion. Populaire et économique.',
       icon: '🌳',
       features: [
@@ -67,7 +67,7 @@ export default function ProduitsPage() {
     },
     {
       name: 'Frêne Blanc',
-      price: '115$',
+      price: '115$/la corde',
       description: 'Excellente chaleur, peut même brûler légèrement vert. Parfait pour usage d\'urgence ou immédiat.',
       icon: '🪵',
       features: [
@@ -81,7 +81,7 @@ export default function ProduitsPage() {
     },
     {
       name: 'Bois d\'Allumage',
-      price: '45$',
+      price: '45$/sac',
       description: 'Petits morceaux de bois franc parfaits pour démarrer votre feu rapidement. Sac de 40 lbs.',
       icon: '🔥',
       features: [
@@ -95,7 +95,7 @@ export default function ProduitsPage() {
     },
     {
       name: 'Copeaux/Rabotures',
-      price: '35$',
+      price: '35$/sac',
       description: 'Idéal pour allumer vos feux. Sac de 30 lbs de copeaux secs.',
       icon: '✨',
       features: [
