@@ -74,6 +74,16 @@ export default function ContactPageClient() {
 
         if (apiResponse.ok) {
           success = true
+        } else {
+          // Fallback vers l'API simple
+          const simpleResponse = await fetch('/api/contact-simple', {
+            method: 'POST', 
+            body: apiFormData,
+          })
+          
+          if (simpleResponse.ok) {
+            success = true
+          }
         }
       }
 

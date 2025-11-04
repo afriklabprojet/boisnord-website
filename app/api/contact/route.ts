@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
     if (resend && process.env.RESEND_API_KEY !== 're_123456789_CHANGEZ_MOI') {
       try {
         await resend.emails.send({
-          from: 'contact@boisdechauffagesbarbe.shop',
+          from: 'onboarding@resend.dev', // Utilise l'adresse par défaut de Resend
           to: [destinationEmail],
           subject: `[Site Web] Nouvelle demande - ${data.name}`,
           html: emailContent,
@@ -78,6 +78,7 @@ export async function POST(request: NextRequest) {
         console.log('Email envoyé via Resend avec succès')
       } catch (resendError) {
         console.error('Erreur Resend:', resendError)
+        console.log('Détails erreur:', JSON.stringify(resendError, null, 2))
       }
     }
 
