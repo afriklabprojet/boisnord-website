@@ -177,7 +177,7 @@ export default function LivraisonPage() {
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li>• Déchargement standard inclus</li>
-                  <li>• Cordage disponible (+50$/corde)</li>
+                  <li>• Cordage disponible</li>
                   <li>• Accès camion requis</li>
                 </ul>
               </div>
