@@ -67,22 +67,42 @@ export default function ContactPageClient() {
           apiFormData.append(key, value)
         })
 
-        const apiResponse = await fetch('/api/contact', {
-          method: 'POST',
-          body: apiFormData,
-        })
-
-        if (apiResponse.ok) {
-          success = true
-        } else {
-          // Fallback vers l'API simple
-          const simpleResponse = await fetch('/api/contact-simple', {
-            method: 'POST', 
+        // Test avec l'API direct en premier
+        try {
+          const directResponse = await fetch('/api/contact-direct', {
+            method: 'POST',
             body: apiFormData,
           })
           
-          if (simpleResponse.ok) {
+          if (directResponse.ok) {
             success = true
+            console.log('✅ Succès via API direct')
+          }
+        } catch (directError) {
+          console.log('API direct échoué, tentative API principal...')
+        }
+
+        // Fallback vers API principal
+        if (!success) {
+          const apiResponse = await fetch('/api/contact', {
+            method: 'POST',
+            body: apiFormData,
+          })
+
+          if (apiResponse.ok) {
+            success = true
+            console.log('✅ Succès via API principal')
+          } else {
+            // Dernier fallback vers l'API simple
+            const simpleResponse = await fetch('/api/contact-simple', {
+              method: 'POST', 
+              body: apiFormData,
+            })
+            
+            if (simpleResponse.ok) {
+              success = true
+              console.log('✅ Succès via API simple (logs uniquement)')
+            }
           }
         }
       }
