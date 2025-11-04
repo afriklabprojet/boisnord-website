@@ -186,7 +186,12 @@ export default function HomePage() {
                 </p>
                 
                 <div className="text-center mb-4">
-                  <span className="text-3xl font-bold text-forest-700">{product.price}</span>
+                  <span className="text-3xl font-bold text-forest-700">
+                    {product.price.split('/')[0]}
+                    <span className="text-sm font-normal text-gray-600 ml-1">
+                      /{product.price.split('/')[1]}
+                    </span>
+                  </span>
                 </div>
 
                 <ul className="space-y-2 mb-6 text-sm">
