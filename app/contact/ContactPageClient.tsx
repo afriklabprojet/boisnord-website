@@ -345,6 +345,10 @@ export default function ContactPageClient() {
                           <option value="2">2 cordes</option>
                           <option value="3">3 cordes</option>
                           <option value="4+">4 cordes et plus</option>
+                          <option value="1-pallet">1 pallet (granulés)</option>
+                          <option value="2-pallet">2 pallets (granulés)</option>
+                          <option value="3-pallet">3 pallets (granulés)</option>
+                          <option value="4+-pallet">4 pallets et plus (granulés)</option>
                         </select>
                       </div>
                     </div>
