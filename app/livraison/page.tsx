@@ -16,15 +16,15 @@ export default function LivraisonPage() {
       color: 'forest',
     },
     {
-      name: 'Zone 2 - 25$/livraison',
+      name: 'Zone 2',
       areas: ['Beauport', 'Charlesbourg', 'Boischatel', 'L\'Ange-Gardien', 'Château-Richer', 'Wendake'],
-      fee: '25$/livraison',
+      fee: '25$',
       color: 'primary',
     },
     {
-      name: 'Zone 3 - 50$/livraison',
+      name: 'Zone 3',
       areas: ['Stoneham', 'Lac-Beauport', 'Shannon', 'Fossambault', 'Neuville', 'Donnacona'],
-      fee: '50$/livraison',
+      fee: '50$',
       color: 'gray',
     },
   ]
@@ -127,8 +127,14 @@ export default function LivraisonPage() {
 
                 <div className="pt-4 border-t border-gray-200">
                   <div className="text-center">
-                    <span className="text-2xl font-bold text-primary-800">{zone.fee}</span>
-                    <span className="text-gray-600 text-sm ml-1">/ livraison</span>
+                    {zone.fee === 'Inclus' ? (
+                      <span className="text-2xl font-bold text-primary-800">{zone.fee}</span>
+                    ) : (
+                      <>
+                        <span className="text-2xl font-bold text-primary-800">{zone.fee}</span>
+                        <span className="text-gray-600 text-sm ml-1">/ livraison</span>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
@@ -188,7 +194,7 @@ export default function LivraisonPage() {
                   <h3 className="text-xl font-semibold text-primary-800">Modes de Paiement</h3>
                 </div>
                 <p className="text-gray-700 mb-3">
-                  Plusieurs options de paiement pour votre commodité.
+                  options de paiement pour votre commodité.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li>• Virement Interac</li>
