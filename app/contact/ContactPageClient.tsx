@@ -67,22 +67,27 @@ export default function ContactPageClient() {
           apiFormData.append(key, value)
         })
 
-        // Test avec l'API direct en premier
+        // Test DIRECT Resend en premier
         try {
-          const directResponse = await fetch('/api/contact-direct', {
+          const resendOnlyResponse = await fetch('/api/contact-resend-only', {
             method: 'POST',
             body: apiFormData,
           })
           
-          if (directResponse.ok) {
+          const resendResult = await resendOnlyResponse.json()
+          console.log('🔍 Résultat test Resend:', resendResult)
+          
+          if (resendResult.success) {
             success = true
-            console.log('✅ Succès via API direct')
+            console.log('✅ Succès via Resend direct!')
+          } else {
+            console.log('❌ Échec Resend:', resendResult.errorDetails)
           }
-        } catch (directError) {
-          console.log('API direct échoué, tentative API principal...')
+        } catch (resendError) {
+          console.log('Erreur test Resend direct:', resendError)
         }
 
-        // Fallback vers API principal
+        // Fallback vers API principal si Resend échoue
         if (!success) {
           const apiResponse = await fetch('/api/contact', {
             method: 'POST',
