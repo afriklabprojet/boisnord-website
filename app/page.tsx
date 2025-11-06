@@ -6,7 +6,7 @@ export default function HomePage() {
     {
       name: 'Érable Dur',
       description: 'Le champion du chauffage ! Pouvoir calorifique exceptionnel avec des braises qui durent toute la nuit.',
-      price: '150$/la corde',
+      price: '130$/la corde',
       unit: 'la corde',
       icon: '🍁',
       popular: true,

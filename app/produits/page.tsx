@@ -11,7 +11,7 @@ export default function ProduitsPage() {
   const products = [
     {
       name: 'Érable Dur (Sugar Maple)',
-      price: '150$/la corde',
+      price: '130$/la corde',
       description: 'Le roi incontesté du bois de chauffage! L\'érable dur offre le meilleur pouvoir calorifique et produit des braises durables.',
       icon: '🍁',
       features: [
