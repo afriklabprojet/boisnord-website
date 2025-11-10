@@ -232,11 +232,9 @@ export default function ContactPageClient() {
                     <div>
                       <h3 className="font-semibold text-primary-800 mb-1">Adresse</h3>
                       <p className="text-gray-700">
-                        2840 QC-148<br />
-                        Pontiac, QC J0X 2G0
-                      </p>
-                      <p className="text-sm text-gray-600 mt-1">
-                        Province du Québec, Canada
+                        2840 Route 148<br />
+                        Pontiac (Québec) J0X2G0<br />
+                        Canada
                       </p>
                     </div>
                   </div>

@@ -92,7 +92,7 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-300 text-sm">
               <li className="flex items-start space-x-2">
                 <FaMapMarkerAlt className="text-forest-400 mt-1 flex-shrink-0" />
-                <span>2840 QC-148<br />Pontiac, QC J0X 2G0</span>
+                <span>2840 Route 148<br />Pontiac (Québec) J0X2G0<br />Canada</span>
               </li>
               <li className="flex items-center space-x-2">
                 <FaPhone className="text-forest-400 flex-shrink-0" />
