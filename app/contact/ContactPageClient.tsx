@@ -216,8 +216,8 @@ export default function ContactPageClient() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-primary-800 mb-1">Courriel</h3>
-                      <a href="mailto:info@boisdechauffagesbarbe.shop" className="text-forest-600 hover:text-forest-700">
-                        info@boisdechauffagesbarbe.shop
+                      <a href="mailto:infos@boisdechauffagesbarbe.shop" className="text-forest-600 hover:text-forest-700">
+                        infos@boisdechauffagesbarbe.shop
                       </a>
                       <p className="text-sm text-gray-600 mt-1">
                         Réponse en moins de 24h

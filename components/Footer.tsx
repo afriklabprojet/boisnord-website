@@ -102,8 +102,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-2">
                 <FaEnvelope className="text-forest-400 flex-shrink-0" />
-                <a href="mailto:info@boisdechauffagesbarbe.shop" className="hover:text-forest-400 transition-colors">
-                  info@boisdechauffagesbarbe.shop
+                <a href="mailto:infos@boisdechauffagesbarbe.shop" className="hover:text-forest-400 transition-colors">
+                  infos@boisdechauffagesbarbe.shop
                 </a>
               </li>
             </ul>
